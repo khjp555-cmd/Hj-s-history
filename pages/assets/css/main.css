@@ -3476,3 +3476,58 @@ body.is-menu-visible #menu .close {
     padding: 0 1.25em;
   }
 }
+/* 문서 선택 영역 */
+
+.document-selector {
+  margin: 0 0 3em 0;
+  padding: 2em;
+  border-radius: 16px;
+  background: #f7f7f7;
+}
+
+.document-selector h2 {
+  margin-bottom: 0.5em;
+}
+
+.document-selector p {
+  margin-bottom: 1.5em;
+}
+
+.selector-row {
+  display: flex;
+  gap: 1.5em;
+  flex-wrap: wrap;
+}
+
+.selector-box {
+  flex: 1;
+  min-width: 240px;
+}
+
+.selector-box label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+.selector-box select {
+  width: 100%;
+  padding: 0.8em;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 1em;
+}
+
+.selector-box select:disabled {
+  background: #eeeeee;
+  color: #888888;
+}
+
+.selected-result {
+  margin-top: 1.5em;
+  padding: 1em;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #555555;
+}
