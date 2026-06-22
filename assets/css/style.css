@@ -418,7 +418,7 @@ h3 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0;
+  opacity: 1;
   transform: scale(1.04);
   transition: opacity 0.35s ease, transform 0.35s ease;
   pointer-events: none;
@@ -441,7 +441,7 @@ h3 {
 }
 
 #documents.has-project-bg .archive-bg-layer {
-  opacity: 0.58;
+  opacity: 1;
   transform: scale(1);
 }
 
