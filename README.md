@@ -105,3 +105,22 @@ archiveBackground: "assets/images/project-tom.svg"
 ```
 
 카드 대표 이미지는 `image`, PDF 열람 구역 배경은 `archiveBackground`, 최상단 Hero 배경은 `site.heroBackground`를 수정하면 됩니다.
+
+
+## 영상 모달 팝업 사용법
+
+`Gameplay Prototype` 영역의 영상 카드를 클릭하면 별도의 팝업 창이 열리고 유튜브 영상이 자동 재생됩니다.
+
+영상 교체는 `assets/js/data.js`에서 각 프로젝트의 `youtubeId`만 변경하면 됩니다.
+
+```js
+youtubeId: "유튜브_영상_ID"
+```
+
+예를 들어 유튜브 주소가 `https://www.youtube.com/watch?v=ABCDEFG1234`라면 아래처럼 입력합니다.
+
+```js
+youtubeId: "ABCDEFG1234"
+```
+
+닫기 버튼, 배경 클릭, `Esc` 키로 영상 창을 닫을 수 있습니다. 창을 닫으면 iframe 주소를 비워서 영상 재생도 함께 중지됩니다.

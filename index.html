@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="게임 기획자 포트폴리오 - 미소녀 수집형 RPG, 조선 소울라이크, 동양 다크판타지 로그라이트 프로젝트" />
-  <title>Game Planner Portfolio</title>
+  <meta name="description" content="권현진의 게임 기획 포트폴리오 - 미소녀 수집형 RPG, 조선 소울라이크, 동양 다크판타지 로그라이트 프로젝트" />
+  <title>Hj's Game Planning Portfolio</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href=assets/ type="image/x-icon">
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header class="site-header" id="top">
@@ -32,9 +34,9 @@
       <div class="container hero-grid">
         <div class="hero-copy reveal">
           <p class="eyebrow">Game Design · Level Design · System Planning</p>
-          <h1 id="hero-title">세계관, 시스템, 레벨을 설계하는<br />게임 기획 포트폴리오</h1>
+          <h1 id="hero-title">세계관, 시스템, 레벨을 설계하는<br />권현진의 게임 기획 포트폴리오</h1>
           <p class="hero-desc">
-            팀 프로젝트 1개와 개인 프로젝트 2개를 중심으로 개발제안서, 캐릭터/배경 컨셉, 게임 시스템, 레벨 디자인, UI, 서비스 기획 문서를 PDF로 정리하고 언리얼 엔진 프로토타입 플레이 영상을 함께 제공합니다.
+            팀 프로젝트 1개와 개인 프로젝트 2개를 중심으로 개발제안서, 캐릭터/배경 컨셉, 게임 시스템, 레벨 디자인, UI, 서비스 기획 문서 등을 정리하고 언리얼 엔진으로 제작한 테스트 영상을 함께 제공합니다.
           </p>
           <div class="hero-actions">
             <a class="btn primary" href="#projects">프로젝트 보기</a>
@@ -122,12 +124,31 @@
         <p>문서, 프로토타입, 레벨 디자인 자료를 지속적으로 업데이트할 수 있는 정적 웹사이트입니다.</p>
       </div>
       <div class="footer-links">
-        <a href="mailto:your-email@example.com">your-email@example.com</a>
-        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
+        <a href="mailto:khjp555@naver.com">your-email@example.com</a>
+        <!-- <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube Channel</a> -->
         <a href="#top">맨 위로</a>
       </div>
     </div>
   </footer>
+
+
+  <div class="video-modal" id="videoModal" aria-hidden="true">
+    <div class="video-modal-backdrop" data-video-modal-close></div>
+    <section class="video-modal-panel" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
+      <div class="video-modal-head">
+        <h2 id="videoModalTitle">프로토타입 플레이 영상</h2>
+        <button class="video-modal-close" id="videoModalClose" type="button" data-video-modal-close aria-label="영상 창 닫기">×</button>
+      </div>
+      <div class="video-modal-frame">
+        <iframe
+          id="videoModalFrame"
+          title="프로토타입 플레이 영상"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+  </div>
 
   <script src="assets/js/data.js"></script>
   <script src="assets/js/main.js"></script>

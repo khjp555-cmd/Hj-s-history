@@ -10,6 +10,10 @@ const heroSection = qs(".hero");
 const heroBgLayer = qs(".hero-bg");
 const navToggle = qs(".nav-toggle");
 const navMenu = qs(".nav-menu");
+const videoModal = qs("#videoModal");
+const videoModalFrame = qs("#videoModalFrame");
+const videoModalTitle = qs("#videoModalTitle");
+const videoModalClose = qs("#videoModalClose");
 
 function createProjectCards() {
   projectGrid.innerHTML = portfolioData.projects.map((project) => `
@@ -92,22 +96,70 @@ function createDocumentCards(filter = "all") {
 function createVideoCards() {
   videoGrid.innerHTML = portfolioData.projects.map((project) => `
     <article class="video-card reveal">
-      <div class="video-frame">
-        <iframe
-          src="https://www.youtube.com/embed/${project.youtubeId}"
-          title="${project.title} gameplay prototype"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>
-      </div>
-      <div class="video-info">
-        <p class="project-type">${project.type}</p>
-        <h3>${project.title}</h3>
-        <p>${project.genre}</p>
-      </div>
+      <button
+        class="video-open"
+        type="button"
+        data-youtube-id="${project.youtubeId}"
+        data-video-title="${project.title} 다이얼로그 테스트 영상"
+        aria-label="${project.title} 다이얼로그 테스트 영상 열기"
+      >
+        <span class="video-frame">
+          <img
+            src="https://img.youtube.com/vi/${project.youtubeId}/hqdefault.jpg"
+            alt="${project.title} 플레이 영상 썸네일"
+            loading="lazy"
+          />
+          <span class="play-badge" aria-hidden="true">▶</span>
+        </span>
+        <span class="video-info">
+          <span class="project-type">${project.type}</span>
+          <strong>${project.title}</strong>
+          <span>${project.genre}</span>
+        </span>
+      </button>
     </article>
   `).join("");
+}
+
+function openVideoModal(youtubeId, title) {
+  if (!videoModal || !videoModalFrame || !videoModalTitle) return;
+
+  videoModalTitle.textContent = title;
+  videoModalFrame.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`;
+  videoModal.classList.add("open");
+  videoModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+  videoModalClose?.focus();
+}
+
+function closeVideoModal() {
+  if (!videoModal || !videoModalFrame) return;
+
+  videoModal.classList.remove("open");
+  videoModal.setAttribute("aria-hidden", "true");
+  videoModalFrame.src = "";
+  document.body.classList.remove("modal-open");
+}
+
+function bindVideoModal() {
+  document.addEventListener("click", (event) => {
+    const openButton = event.target.closest(".video-open");
+
+    if (openButton) {
+      openVideoModal(openButton.dataset.youtubeId, openButton.dataset.videoTitle);
+      return;
+    }
+
+    if (event.target.closest("[data-video-modal-close]")) {
+      closeVideoModal();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && videoModal?.classList.contains("open")) {
+      closeVideoModal();
+    }
+  });
 }
 
 function bindTabs() {
@@ -168,6 +220,7 @@ function init() {
   bindTabs();
   bindProjectDocLinks();
   bindMobileNav();
+  bindVideoModal();
   observeReveals();
 }
 
