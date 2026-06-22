@@ -1,61 +1,135 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="게임 개발 교육 사이트" />
-    <meta name="author" content="게임 개발 교육 팀" />
-    <meta name="keywords" content="게임 개발, 교육, 튜토리얼" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="게임 기획자 포트폴리오 - 미소녀 수집형 RPG, 조선 소울라이크, 동양 다크판타지 로그라이트 프로젝트" />
+  <title>Game Planner Portfolio</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <nav class="nav" aria-label="주요 메뉴">
+      <a class="logo" href="#top" aria-label="포트폴리오 홈">
+        <span class="logo-mark">GP</span>
+        <span class="logo-text">Game Planner Portfolio</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#documents">Documents</a></li>
+        <li><a href="#videos">Gameplay</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="XXX의 문서창고" />
-    <meta property="og:title" content="intro" />
-    <meta property="og:description" content="게임 기획서 모음!" />
-    <meta property="og:image" content="./name_seo.png" />
-  
-    <!-- 자신의 홈페이지 주소로 URL을 변경할 것!!! -->
-    <meta property="og:url" content="https://sbsgameacademy01.netlify.app" />
-    <link rel="stylesheet" href="/main.css" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <title>Intro</title>
-  </head>
+  <main>
+    <section class="hero section" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Game Design · Level Design · System Planning</p>
+          <h1 id="hero-title">세계관, 시스템, 레벨을 설계하는<br />게임 기획 포트폴리오</h1>
+          <p class="hero-desc">
+            팀 프로젝트 1개와 개인 프로젝트 2개를 중심으로 개발제안서, 캐릭터/배경 컨셉, 게임 시스템, 레벨 디자인, UI, 서비스 기획 문서를 PDF로 정리하고 언리얼 엔진 프로토타입 플레이 영상을 함께 제공합니다.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#projects">프로젝트 보기</a>
+            <a class="btn ghost" href="#documents">문서 바로가기</a>
+          </div>
+        </div>
+        <aside class="hero-card reveal" aria-label="포트폴리오 요약">
+          <div class="stat-card">
+            <strong>3</strong>
+            <span>Game Projects</span>
+          </div>
+          <div class="stat-card">
+            <strong>7+</strong>
+            <span>Planning Docs / Project</span>
+          </div>
+          <div class="stat-card">
+            <strong>UE</strong>
+            <span>Prototype Gameplay</span>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-  <body>
-    <div style="position: fixed; z-index: -1; width: 100%; height: 100%">
-      <!-- <iframe
-        width="100%"
-        height="100%"
-        src="https://www.youtube.com/embed/6XGeJwsUP9c?si=xDtyFE08Fcg2meUK&autoplay=1&mute=1&loop=1&playlist=6XGeJwsUP9c"
-        title="YouTube video player"
-        frameborder="0"
-        allow="
-          accelerometer;
-          autoplay;
-          clipboard-write;
-          encrypted-media;
-          gyroscope;
-          picture-in-picture;
-          web-share;
-        "
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-      >
-      </iframe> -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Projects</p>
+          <h2 id="projects-title">대표 게임 프로젝트</h2>
+          <p>각 프로젝트 카드를 선택하면 핵심 기획 의도, 문서 목록, 플레이 영상 영역으로 이동할 수 있습니다.</p>
+        </div>
+        <div class="project-grid" id="projectGrid"></div>
+      </div>
+    </section>
 
+    <section class="section split-section" id="documents" aria-labelledby="documents-title">
+      <div class="archive-bg-layer" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">PDF Archive</p>
+          <h2 id="documents-title">기획서 PDF 열람</h2>
+          <!-- <p>PDF 파일은 <code>assets/docs/프로젝트폴더/</code>에 넣고 <code>assets/js/data.js</code>의 경로만 수정하면 자동으로 카드에 연결됩니다.</p> -->
+        </div>
+        <div class="filter-tabs reveal" role="tablist" aria-label="프로젝트 문서 필터">
+          <button class="tab active" type="button" data-filter="all">전체</button>
+          <button class="tab" type="button" data-filter="tom">Tears of the Moon</button>
+          <button class="tab" type="button" data-filter="jangsanbeom">장산범</button>
+          <button class="tab" type="button" data-filter="nine-dragon">구천을 기는 용</button>
+        </div>
+        <div class="document-grid" id="documentGrid"></div>
+      </div>
+    </section>
 
-  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/vCqtSELyB1I?si=e9Hw04dvju6vHRVp&autoplay=1&mute=1&loop=1" 
-  title="YouTube video player" frameborder="0" 
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    <section class="section dark-section" id="videos" aria-labelledby="videos-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Gameplay Prototype</p>
+          <h2 id="videos-title">언리얼 엔진 프로토타입 영상</h2>
+          <!-- <p>유튜브 영상 ID만 교체하면 반응형 iframe으로 플레이 영상을 표시할 수 있습니다.</p> -->
+        </div>
+        <div class="video-grid" id="videoGrid"></div>
+      </div>
+    </section>
 
-  </iframe>
+    <section class="section" id="workflow" aria-labelledby="workflow-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Structure</p>
+          <h2 id="workflow-title">포트폴리오 구성 방식</h2>
+        </div>
+        <ol class="workflow-list reveal">
+          <li><strong>프로젝트 소개</strong><span>장르, 핵심 콘셉트, 담당 영역, 설계 포인트를 한눈에 정리합니다.</span></li>
+          <li><strong>문서 아카이브</strong><span>개발제안서부터 서비스 기획서까지 PDF로 열람할 수 있게 구성합니다.</span></li>
+          <li><strong>프로토타입 영상</strong><span>언리얼 엔진 플레이 영상을 유튜브 iframe으로 삽입합니다.</span></li>
+          <li><strong>반응형 지원</strong><span>PC, 태블릿, 모바일 환경에서 카드와 영상이 자연스럽게 재배치됩니다.</span></li>
+        </ol>
+      </div>
+    </section>
+  </main>
 
-    
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>게임 기획자 포트폴리오</h2>
+        <p>문서, 프로토타입, 레벨 디자인 자료를 지속적으로 업데이트할 수 있는 정적 웹사이트입니다.</p>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:your-email@example.com">your-email@example.com</a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
+        <a href="#top">맨 위로</a>
+      </div>
     </div>
-    <div>
-      <!-- <a id="portfolio-link" href="/pages/index.html">XXX의 포트폴리오</a> -->
-      <a id="pl" href="/pages/index.html">Hj's의 포트폴리오</a>
-    </div>
-  </body>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
 </html>
