@@ -74,23 +74,29 @@ function createDocumentCards(filter = "all") {
     : portfolioData.projects.filter((project) => project.id === filter);
 
   documentGrid.innerHTML = projects.flatMap((project) => {
-    const folder = projectDocFolders[project.id];
-    return portfolioData.documents.map((docName) => {
-      const encodedFileName = encodeURIComponent(`${docName}.pdf`);
-      const filePath = `assets/docs/${folder}/${encodedFileName}`;
-      return `
-        <article class="doc-card reveal" data-project="${project.id}">
-          <div>
-            <p class="doc-project">${project.title}</p>
-            <h3>${docName}</h3>
-            <p>PDF 파일을 같은 이름으로 교체하면 버튼이 자동 연결됩니다.</p>
-          </div>
-          <a class="btn small" href="${filePath}" target="_blank" rel="noopener noreferrer">PDF 열기</a>
-        </article>
-      `;
-    });
-  }).join("");
-  observeReveals();
+  const folder = projectDocFolders[project.id];
+
+  const documentList = Array.isArray(project.documents)
+    ? project.documents
+    : portfolioData.documents;
+
+  return documentList.map((docName) => {
+    const encodedFileName = encodeURIComponent(`${docName}.pdf`);
+    const filePath = `assets/docs/${folder}/${encodedFileName}`;
+
+    return `
+      <article class="doc-card reveal" data-project="${project.id}">
+        <div>
+          <p class="doc-project">${project.title}</p>
+          <h3>${docName}</h3>
+        </div>
+        <a class="btn small" href="${filePath}" target="_blank" rel="noopener noreferrer">PDF 열기</a>
+      </article>
+    `;
+  });
+}).join("");
+
+observeReveals();
 }
 
 function createVideoCards() {

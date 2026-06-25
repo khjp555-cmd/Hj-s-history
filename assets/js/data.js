@@ -2,6 +2,7 @@ const portfolioData = {
   site: {
     heroBackground: "assets/images/hero-background.svg"
   },
+
   projects: [
     {
       id: "tom",
@@ -13,8 +14,21 @@ const portfolioData = {
       image: "assets/images/project-tom.svg",
       archiveBackground: "assets/images/pdf-bg-tom.svg",
       tags: ["Character RPG", "Dungeon", "Sci-Fi", "Unreal Prototype"],
-      youtubeId: "QeuYTgGY3sY"
+      youtubeId: "QeuYTgGY3sY",
+
+      documents: [
+        "개발제안서",
+        "스토리&시나리오",
+        "캐릭터컨셉기획서",
+        "배경컨셉기획서",
+        "게임메카닉스기획서",
+        "콘텐츠메카닉스기획서",
+        "레벨디자인기획서",
+        "게임UI디자인기획서",
+        "게임서비스기획서"
+      ]
     },
+
     {
       id: "jangsanbeom",
       title: "장산범",
@@ -25,8 +39,21 @@ const portfolioData = {
       image: "assets/images/project-jangsanbeom.svg",
       archiveBackground: "assets/images/pdf-bg-jangsanbeom.svg",
       tags: ["Soulslike", "Open World", "Joseon", "Boss Design"],
-      youtubeId: "dQw4w9WgXcQ"
+      youtubeId: "dQw4w9WgXcQ",
+
+      documents: [
+        "개발제안서",
+        "스토리&시나리오",
+        "캐릭터컨셉기획서",
+        "배경컨셉기획서",
+        "게임메카닉스기획서",
+        "콘텐츠메카닉스기획서",
+        "레벨디자인기획서",
+        "게임UI디자인기획서",
+        "게임서비스기획서"
+      ]
     },
+
     {
       id: "nine-dragon",
       title: "구천을 기는 용",
@@ -37,9 +64,19 @@ const portfolioData = {
       image: "assets/images/project-nine-dragon.svg",
       archiveBackground: "assets/images/pdf-bg-nine.svg",
       tags: ["Roguelite", "Quarter View", "Dark Fantasy", "Team Project"],
-      youtubeId: "dQw4w9WgXcQ"
+      youtubeId: "dQw4w9WgXcQ",
+
+      documents: [
+        "개발제안서",
+        "배경컨셉기획서",
+        "게임메카닉스기획서",
+        "콘텐츠메카닉스기획서",
+        "레벨디자인기획서",
+        "게임서비스기획서"
+      ]
     }
   ],
+
   documents: [
     "개발제안서",
     "스토리&시나리오",
